@@ -30,6 +30,12 @@
               <td>
                 <%= task.completed %>
               </td>
+              <td>
+                <form action=<%="/tasks/update/" + task.id %> method="post">
+                    <input type="hidden" name="complete" value="<%- task.completed ? 'false' : 'true' %>">
+                    <button class="btn btn-primary" type="submit"><%= task.completed ? "set incomplete" : "set complete"  %></button>
+                </form>
+              </td>
               <td><a href=<%="/tasks/edit/" + task.id %> class="btn btn-primary">Edit</a></td>
               <td><a href=<%="/tasks/delete/" + task.id %> class="btn btn-primary">Delete</a></td>
             </tr>

@@ -47,7 +47,7 @@ const editTask = async (req, res) => {
 const updateTask = async (req, res) => {
   let task = false
   try {
-    if (req.body.complete) {
+    if (req.body.complete === "true") {
       req.body.completed = true
     } else {
       req.body.completed = false
