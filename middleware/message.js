@@ -1,7 +1,7 @@
 const setMessage = (req, res, next) => {
-  req.session.pendingMessage
-    ? (res.locals.message = req.session.pendingMessage)
-    : (res.locals.message = "")
+  res.locals.message = req.session.pendingMessage
+    ? req.session.pendingMessage
+    : ""
   req.session.pendingMessage = ""
   next()
 }
